@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List App</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>To-Do List</h1>
+  <input type="text" id="taskInput" placeholder="Add a new task">
+  <button id="addTaskButton">Add Task</button>
+  <ul id="taskList"></ul>
+</div>
+<script src="script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator Zakat Penghasilan</title>
+</head>
+<body>
+  <h1>Kalkulator Zakat Penghasilan</h1>
+  
+  <label for="penghasilan">Total Penghasilan Bulanan (Rp): </label>
+  <input type="number" id="penghasilan" min="0">
+  
+  <br>
+  
+  <button onclick="hitungZakat()">Hitung Zakat</button>
+  
+  <h2>Hasil Perhitungan:</h2>
+  <p>Jumlah Zakat Penghasilan: <span id="hasilZakat"></span></p>
+  
+  <script>
+    function hitungZakat() {
+      var penghasilan = parseFloat(document.getElementById('penghasilan').value);
+      var nisab = 520 * 423000; // Nisab pada saat penulisan (423.000)
+      
+      if (penghasilan >= nisab) {
+        var zakat = penghasilan * 0.025; // 2.5% dari penghasilan
+        document.getElementById('hasilZakat').textContent = zakat.toLocaleString('id-ID') + ' (2.5% dari penghasilan)';
+      } else {
+        document.getElementById('hasilZakat').textContent = 'Tidak wajib membayar zakat penghasilan karena belum mencapai nisab.';
+      }
+    }
+  </script>
+</body>
+</html>
